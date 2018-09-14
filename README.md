@@ -25,7 +25,7 @@
 	text-align: center;  
 }  
 
-.calendar_header .sunday, {color: red;}  
+.calendar_header .sunday {color: red;}  
 .calendar_body .sunday, .calendar_custom_date {background-color: #ff93a8;}  
 .calendar_header .saturday {color: blue;}  
 .calendar_body .saturday {background-color: #93d7ff;}  
