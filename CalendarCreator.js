@@ -99,7 +99,7 @@ CalendarCreator.prototype.create = function ()
 		table.style.borderCollapse = 'collapse';
 		table.classList.add('calendar_table');
 
-		var row   = Math.floor((dateList[month].length / 7) + 1);
+		var row   = Math.ceil((dateList[month].length / 7) + 1);
 		var count = 0;
 
 		var monthNameTr = document.createElement('tr');
