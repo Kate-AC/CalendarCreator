@@ -111,8 +111,10 @@ CalendarCreator.prototype.create = function ()
 		table.appendChild(monthNameTr);
 
 		for (var i = 0; i <= row; i++) {
+			var isEmpty = true;
 			var tr = document.createElement('tr');
 			for (var j = 0; j < 7; j++) {
+				date = null;
 				if (0 === i) {
 					tr.classList.add('calendar_header');
 					var th = document.createElement('th');
@@ -123,7 +125,6 @@ CalendarCreator.prototype.create = function ()
 					tr.classList.add('calendar_body');
 					var td = document.createElement('td');
 
-					date = null;
 					if (undefined !== dateList[month][count]) {
 						var object = dateList[month][count];
 						if (this.dayNameEn[j] === object.day) {
@@ -153,8 +154,14 @@ CalendarCreator.prototype.create = function ()
 					td.innerText = date;
 					tr.appendChild(td);
 				}
+
+				if (null !== date || 0 === i) {
+					isEmpty = false;
+				}
 			}
-			table.appendChild(tr);
+			if (false === isEmpty) {
+				table.appendChild(tr);
+			}
 		}
 
 		frameDiv.appendChild(table);
