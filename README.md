@@ -8,7 +8,8 @@
   
 .calendar_frame {  
     display: inline-block;  
-	margin: 10px;  
+    margin: 10px; 
+    vertical-align: top
 }  
   
 .calendar_header th,  
